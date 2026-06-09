@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>초대장</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    background:#0d2f24;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: "Times New Roman", serif;
+    color:#d4af37;
+}
+
+.container{
+    text-align:center;
+    width:80%;
+    max-width:700px;
+}
+
+.title{
+    font-size:4rem;
+    margin-bottom:50px;
+    letter-spacing:2px;
+}
+
+.date{
+    font-size:1.5rem;
+    margin-bottom:30px;
+}
+
+.message{
+    font-size:1.5rem;
+    line-height:2;
+    margin-bottom:50px;
+}
+
+.question{
+    font-size:1.8rem;
+    margin-bottom:40px;
+}
+
+.buttons{
+    position:relative;
+    height:120px;
+}
+
+button{
+    background:transparent;
+    color:#d4af37;
+    border:2px solid #d4af37;
+    padding:15px 45px;
+    font-size:1.3rem;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    box-shadow:0 0 15px rgba(212,175,55,0.5);
+}
+
+#yes{
+    margin-right:40px;
+}
+
+#no{
+    position:absolute;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">[ 초대장 ]</div>
+
+<div class="date">
+2026년 06월 13일
+</div>
+
+<div class="message">
+김은희님이 김하준님을<br>
+100일 기념 데이트에 초대합니다.
+</div>
+
+<div class="question">
+초대에 응하시겠습니까?
+</div>
+
+<div class="buttons">
+<button id="yes" onclick="acceptInvite()">Yes</button>
+<button id="no">No</button>
+</div>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", () => {
+
+const maxX = window.innerWidth - 150;
+const maxY = window.innerHeight - 100;
+
+const randomX = Math.random() * maxX;
+const randomY = Math.random() * maxY;
+
+noBtn.style.left = randomX + "px";
+noBtn.style.top = randomY + "px";
+
+});
+
+function acceptInvite(){
+
+document.body.innerHTML = `
+<div style="
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#0d2f24;
+color:#d4af37;
+font-family:Times New Roman, serif;
+text-align:center;
+padding:30px;
+">
+
+<div>
+<h1>초대가 수락되었습니다 ✨</h1>
+<p style="font-size:1.4rem;">
+2026년 06월 13일에 만나요 ❤️
+</p>
+</div>
+
+</div>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
