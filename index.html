@@ -102,9 +102,9 @@ body{
 
     justify-content:center;
 
-    gap:100px;
+    gap:180px;
 
-    position:relative;
+    margin-top:50px;
 
 }
 
@@ -135,12 +135,6 @@ button:hover{
     box-shadow:
     0 0 15px rgba(212,175,55,0.25),
     0 0 30px rgba(212,175,55,0.15);
-
-}
-
-#no{
-
-    position:absolute;
 
 }
 
@@ -192,6 +186,7 @@ noBtn.addEventListener("mouseover", () => {
     const x = Math.random() * maxX;
     const y = Math.random() * maxY;
 
+    noBtn.style.position = "fixed";
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 
